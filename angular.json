@@ -40,7 +40,8 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "/ngrx-users-orders-demo/"
             },
             "development": {
               "buildOptimizer": false,
