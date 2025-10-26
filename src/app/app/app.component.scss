@@ -96,6 +96,7 @@ $max-width-container: 1400px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: white;
   }
 
   &:active,
@@ -187,6 +188,7 @@ $max-width-container: 1400px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: white;
     transform: translate(-3px, -3px);
     box-shadow: $primary-shadow;
   }
