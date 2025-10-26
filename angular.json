@@ -36,12 +36,13 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "4kb",
+                  "maximumError": "8kb"
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/ngrx-users-orders-demo/"
+              "baseHref": "/ngrx-users-orders-demo/",
+              "deployUrl": "/ngrx-users-orders-demo/"
             },
             "development": {
               "buildOptimizer": false,
