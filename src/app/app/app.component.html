@@ -1,0 +1,46 @@
+<div class="app-container" dir="rtl">
+  <header class="header">
+    <div class="navbar-wrapper">
+      <!-- Mobile Navigation Menu -->
+      <nav role="navigation" class="nav-menu-wrapper" [class.active]="isMobileMenuOpen">
+        <div class="nav-links-mobile">
+          <a href="#" class="nav-link-mobile active">לוח בקרה</a>
+          <a href="#" class="nav-link-mobile">ניהול לקוחות</a>
+          <a href="#" class="nav-link-mobile">דוחות</a>
+          <a href="#" class="nav-link-mobile">הגדרות</a>
+          <a href="#" class="nav-link-mobile contact">יצירת קשר</a>
+        </div>
+      </nav>
+      
+      <!-- Mobile Menu Button -->
+      <div class="menu-button" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+        <img [src]="isMobileMenuOpen ? 'assets/menu-close.svg' : 'assets/menu-open.svg'" 
+             loading="lazy" alt="menu" class="menu-icon">
+      </div>
+      
+      <!-- Logo -->
+      <a href="/" class="navbar-brand">
+        <img src="assets/fmr_logo.png" loading="lazy" width="110" alt="FinanceFlow" class="logo-image">
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <nav class="nav desktop-nav">
+        <a href="#" class="nav-link active">לוח בקרה</a>
+        <a href="#" class="nav-link">ניהול לקוחות</a>
+        <a href="#" class="nav-link">דוחות</a>
+        <a href="#" class="nav-link">הגדרות</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="content-wrapper">
+      <div class="page-header">
+        <h1 class="page-title">ניהול תיק השקעות לקוחות</h1>
+        <p class="page-subtitle">מעקב וניתוח השקעות ופעילויות מסחר של לקוחות</p>
+      </div>
+
+      <app-user-orders />
+    </div>
+  </main>
+</div>

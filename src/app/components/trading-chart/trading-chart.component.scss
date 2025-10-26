@@ -1,0 +1,147 @@
+// =============================================================================
+// TRADING CHART COMPONENT
+// =============================================================================
+$primary-color: #3224ff;
+
+// =============================================================================
+// LAYOUT
+// =============================================================================
+.trading-systems-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  width: 100%;
+}
+
+.trading-chart {
+  width: 100%;
+  height: auto;
+  max-width: 280px;
+  max-height: 280px;
+}
+
+.trading-text {
+  color: $primary-color;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out 4.5s forwards;
+}
+
+// =============================================================================
+// GRID LINES ANIMATION
+// =============================================================================
+.grid-lines line {
+  animation: drawLine 0.5s ease-out forwards;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+
+  &:nth-child(1) { animation-delay: 0.1s; }
+  &:nth-child(2) { animation-delay: 0.15s; }
+  &:nth-child(3) { animation-delay: 0.2s; }
+  &:nth-child(4) { animation-delay: 0.25s; }
+  &:nth-child(5) { animation-delay: 0.3s; }
+  &:nth-child(6) { animation-delay: 0.35s; }
+  &:nth-child(7) { animation-delay: 0.4s; }
+  &:nth-child(8) { animation-delay: 0.45s; }
+  &:nth-child(9) { animation-delay: 0.5s; }
+  &:nth-child(10) { animation-delay: 0.55s; }
+  &:nth-child(11) { animation-delay: 0.6s; }
+}
+
+// =============================================================================
+// DATA LINES ANIMATION
+// =============================================================================
+.data-line-1 {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: drawDataLine 2s ease-out 1s forwards;
+}
+
+.data-line-2 {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: drawDataLine 2s ease-out 1.5s forwards;
+}
+
+// =============================================================================
+// DATA POINTS ANIMATION
+// =============================================================================
+.data-points circle {
+  opacity: 0;
+  transform-origin: center;
+  animation: popIn 0.3s ease-out forwards;
+}
+
+.point-1 { animation-delay: 2s; }
+.point-2 { animation-delay: 2.2s; }
+.point-3 { animation-delay: 2.4s; }
+.point-4 { animation-delay: 2.6s; }
+.point-5 { animation-delay: 2.8s; }
+.point-6 { animation-delay: 3s; }
+
+// =============================================================================
+// CHART NUMBERS ANIMATION
+// =============================================================================
+.chart-numbers text {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out 3.2s forwards;
+}
+
+.number-1 { animation-delay: 3.2s; }
+.number-2 { animation-delay: 3.4s; }
+.number-3 { animation-delay: 3.6s; }
+
+// =============================================================================
+// ARROW ANIMATION
+// =============================================================================
+.arrow {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInArrow 0.8s ease-out 4s forwards;
+}
+
+// =============================================================================
+// KEYFRAME ANIMATIONS
+// =============================================================================
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawDataLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInArrow {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

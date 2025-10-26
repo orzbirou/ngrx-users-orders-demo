@@ -1,0 +1,59 @@
+<div class="dashboard-container">
+
+  <!-- Main Dashboard Grid -->
+  <div class="dashboard-grid">
+    <!-- Client Selection Panel -->
+    <div class="dashboard-card client-panel">
+      <div class="card-header">
+        <h2 class="card-title">
+          תיק לקוחות
+        </h2>
+        <div class="card-badge">{{ (users$ | async)?.length }} לקוחות</div>
+      </div>
+      
+      <div class="client-grid">
+        <button 
+          *ngFor="let u of users$ | async" 
+          class="client-card"
+          (click)="select(u.id)"
+          [class.selected]="(summary$ | async)?.name === u.name"
+        >
+          <div class="client-avatar">{{ u.name.charAt(0) }}</div>
+          <div class="client-info">
+            <h4 class="client-name">{{ u.name }}</h4>
+            <p class="client-id">ID: {{ u.id }}</p>
+          </div>
+          <div class="client-status">
+            <div class="status-dot"></div>
+            פעיל
+          </div>
+        </button>
+      </div>
+      
+      <button class="clear-btn" (click)="clear()">
+        <span class="btn-icon">🔄</span>
+        נקה בחירה
+      </button>
+    </div>
+
+    <!-- Selected User Details -->
+    <div class="dashboard-card user-details">
+      <div class="card-header">
+        <h2 class="card-title">
+          פרטי תיק השקעות
+        </h2>
+      </div>
+      
+      <div class="content-layout">
+        <div class="img-div">
+          <app-trading-chart></app-trading-chart>
+        </div>
+        
+        <div class="user-summary">
+          <app-user-name />
+          <app-user-total />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

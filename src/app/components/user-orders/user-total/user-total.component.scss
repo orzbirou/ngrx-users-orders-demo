@@ -1,0 +1,41 @@
+// =============================================================================
+// USER TOTAL COMPONENT
+// =============================================================================
+
+.total-card {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  position: relative;
+  direction: rtl;
+}
+
+.total-content {
+  flex: 1;
+}
+
+.total-label {
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.total-amount {
+  font-size: 1.8rem;
+  margin: 0 0 0.5rem 0;
+}
+
+// =============================================================================
+// SPARKLINE CHART
+// =============================================================================
+.sparkline {
+  display: flex;
+  align-items: end;
+  height: 40px;
+  width: 60px;
+}
+
+.sparkline-bar {
+  flex: 1;
+}

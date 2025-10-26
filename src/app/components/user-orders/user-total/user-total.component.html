@@ -1,0 +1,15 @@
+<div class="total-card">
+  <div class="total-content">
+    <h4 class="total-label">ערך התיק</h4>
+    <p class="total-amount">${{ ((vm$ | async)?.total ?? 0) | number:'1.2-2' }}</p>
+  </div>
+  <div class="sparkline">
+    <div class="sparkline-bar" style="height: 30%"></div>
+    <div class="sparkline-bar" style="height: 60%"></div>
+    <div class="sparkline-bar" style="height: 45%"></div>
+    <div class="sparkline-bar" style="height: 80%"></div>
+    <div class="sparkline-bar" style="height: 70%"></div>
+    <div class="sparkline-bar" style="height: 90%"></div>
+    <div class="sparkline-bar" style="height: 85%"></div>
+  </div>
+</div>

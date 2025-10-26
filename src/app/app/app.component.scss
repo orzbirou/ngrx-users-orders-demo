@@ -1,0 +1,260 @@
+// =============================================================================
+// VARIABLES & CONSTANTS
+// =============================================================================
+$primary-color: #3224ff;
+$primary-border: 1px solid $primary-color;
+$primary-shadow: 3px 3px 0px $primary-color;
+$transition-base: all 0.3s ease;
+$border-radius-base: 8px;
+$max-width-container: 1400px;
+
+// =============================================================================
+// GLOBAL STYLES
+// =============================================================================
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// =============================================================================
+// MAIN LAYOUT
+// =============================================================================
+.app-container {
+  min-height: 100vh;
+  font-family: Pinghl, Arial, sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+// =============================================================================
+// HEADER & NAVIGATION
+// =============================================================================
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+}
+
+.navbar-wrapper {
+  max-width: $max-width-container;
+  margin: 0 auto;
+  padding: 0.8vw 1rem 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 120px;
+  position: relative;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  text-decoration: none;
+}
+
+// Desktop Navigation
+.desktop-nav {
+  display: flex;
+  position: relative;
+  height: 3.55vw;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    right: -6px;
+    width: calc(100%);
+    height: calc(100%);
+    background-color: $primary-color;
+    z-index: -1;
+    transition: $transition-base;
+  }
+}
+
+.nav-link {
+  border: $primary-border;
+  background-color: white;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  position: relative;
+  transition: $transition-base;
+  z-index: 2;
+  height: 100%;
+  width: 15vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover,
+  &.active {
+    background-image: url('../../assets/634eca6eaf17915ec894e406_nav bar BG.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &:active,
+  &.active {
+    transform: translate(6px, 6px);
+    z-index: 1;
+  }
+}
+
+// =============================================================================
+// MOBILE NAVIGATION
+// =============================================================================
+.menu-button {
+  display: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 10px;
+  border-radius: 50%;
+  transition: $transition-base;
+
+  &.active .menu-icon {
+    transform: rotate(90deg);
+  }
+}
+
+.menu-icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.nav-menu-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 50vh;
+  background: transparent;
+  z-index: 1000;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  padding: 120px 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+
+  &.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+
+    @media (min-width: 769px) {
+      display: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+    }
+  }
+
+  @media (min-width: 769px) {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+}
+
+.nav-links-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nav-link-mobile {
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  color: black;
+  border: $primary-border;
+  background: white;
+  text-align: center;
+  border-radius: $border-radius-base;
+  transition: $transition-base;
+  font-weight: 600;
+  position: relative;
+
+  &:hover,
+  &.active {
+    background-image: url('/assets/634eca6eaf17915ec894e406_nav bar BG.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translate(-3px, -3px);
+    box-shadow: $primary-shadow;
+  }
+}
+
+// =============================================================================
+// MAIN CONTENT
+// =============================================================================
+.main-content {
+  padding: 2rem 0.5rem;
+}
+
+.content-wrapper {
+  max-width: $max-width-container;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.page-header {
+  margin-bottom: 3rem;
+  text-align: center;
+  direction: rtl;
+}
+
+.page-title {
+  text-align: right;
+  font-weight: 799;
+  font-size: 4.4vw;
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+  text-align: right;
+  font-size: 1.11vw;
+  font-weight: 799;
+  max-width: 600px;
+}
+
+// =============================================================================
+// RESPONSIVE DESIGN
+// =============================================================================
+@media (max-width: 768px) {
+  .navbar-wrapper {
+    height: 80px;
+    padding: 1rem;
+  }
+  
+  .desktop-nav {
+    display: none;
+  }
+  
+  .menu-button {
+    display: block;
+  }
+  
+  .navbar-brand {
+    height: 50px;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+  }
+
+  .content-wrapper {
+    padding: 0 1rem;
+  }
+}
